@@ -210,16 +210,14 @@ body.dark-theme .nav-toggle .bar { background: rgba(230,238,248,0.8); }
   height: 120px;
   border-radius: 50%;
   background-color: var(--glass-border);
-  display: flex;
-  justify-content: center;
-  align-items: center;
   box-shadow: var(--shadow);
+  overflow: hidden; /* Ensures the image stays within the circle */
 }
 
-.placeholder-icon {
-  width: 60px;
-  height: 60px;
-  color: var(--muted);
+.profile-picture {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Scales the image to fit while maintaining aspect ratio */
 }
 
 .about-content h2 {
@@ -322,50 +320,76 @@ body.dark-theme .nav-toggle .bar { background: rgba(230,238,248,0.8); }
   color: var(--muted);
 }
 
-/* Experience Section */
-.timeline {
-  position: relative;
+/* Experience Tabs */
+.experience-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
   margin-top: 24px;
 }
-.timeline-item {
+
+.tab-list {
+  display: flex;
+  gap: 8px;
+  border-bottom: 1px solid var(--glass-border);
+  padding-bottom: 8px;
+}
+
+.tab-btn {
+  padding: 10px 16px;
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  font-weight: 600;
+  cursor: pointer;
   position: relative;
-  padding-left: 24px;
-  margin-bottom: 24px;
+  transition: color 0.3s ease;
 }
-.timeline-marker {
-  position: absolute;
-  top: 4px;
-  left: 0;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: var(--accent);
-  border: 2px solid var(--bg);
+
+.tab-btn.active {
+  color: var(--accent);
 }
-.timeline::before {
+
+.tab-btn::after {
   content: '';
   position: absolute;
-  top: 4px;
-  left: 5px;
-  width: 2px;
-  height: calc(100% - 12px);
-  background-color: var(--glass-border);
+  bottom: -9px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--accent);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
 }
-.timeline-header {
+
+.tab-btn.active::after {
+  transform: scaleX(1);
+}
+
+.tab-panel {
+  display: none;
+  padding: 16px;
+  border-radius: 12px;
+  background: var(--card);
+  border: 1px solid var(--glass-border);
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+.panel-header {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
   flex-wrap: wrap;
 }
-.timeline-period {
+
+.panel-period {
   font-size: 0.85rem;
   color: var(--muted);
   font-weight: 500;
-}
-.timeline-company {
-  font-weight: 600;
-  margin-bottom: 12px;
 }
 
 .experience-details {

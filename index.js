@@ -86,4 +86,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Initialize theme at load
   initTheme();
+
+  // --- Experience tabs ---
+  const tabList = document.querySelector('.tab-list');
+  const tabButtons = document.querySelectorAll('.tab-btn');
+  const tabPanels = document.querySelectorAll('.tab-panel');
+
+  if (tabList && tabButtons.length && tabPanels.length) {
+    tabList.addEventListener('click', (e) => {
+      const clickedTab = e.target.closest('.tab-btn');
+      if (!clickedTab) return;
+
+      e.preventDefault();
+      switchTab(clickedTab);
+    });
+
+    function switchTab(newTab) {
+      const targetPanelId = newTab.getAttribute('aria-controls');
+      const targetPanel = document.getElementById(targetPanelId);
+
+      // Update button states
+      tabButtons.forEach(button => {
+        button.classList.remove('active');
+        button.setAttribute('aria-selected', 'false');
+      });
+      newTab.classList.add('active');
+      newTab.setAttribute('aria-selected', 'true');
+
+      // Update panel states
+      tabPanels.forEach(panel => {
+        panel.classList.remove('active');
+      });
+      targetPanel.classList.add('active');
+    }
+  }
 });

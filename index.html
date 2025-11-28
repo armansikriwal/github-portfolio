@@ -42,9 +42,7 @@
       <div class="container">
         <div class="about-header glass">
           <div class="about-photo">
-            <svg class="placeholder-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-            </svg>
+            <img src="assets/arman.jpeg" alt="Arman Sikriwal" class="profile-picture" />
           </div>
           <div class="about-content">
             <h2>About Me</h2>
@@ -112,43 +110,40 @@
     <section id="experience" class="section">
       <div class="container">
         <h2>Professional Experience</h2>
-        <div class="timeline">
-          <!-- Current Position -->
-          <div class="timeline-item glass">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <div class="timeline-header">
-                <h3>Member of Technical Staff</h3>
-                <span class="timeline-period">Aug 2023 – Present</span>
+        <div class="experience-tabs">
+          <div class="tab-list" role="tablist" aria-label="Job History">
+            <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="job-1" id="btn-job-1">
+              Member of Technical Staff
+            </button>
+            <button class="tab-btn" role="tab" aria-selected="false" aria-controls="job-2" id="btn-job-2">
+              Backend Developer Intern
+            </button>
+          </div>
+
+          <div class="tab-panels">
+            <div class="tab-panel active" id="job-1" role="tabpanel" aria-labelledby="btn-job-1">
+              <div class="panel-header">
+                <h3>Member of Technical Staff @ Coriolis Technologies</h3>
+                <span class="panel-period">Aug 2023 – Present</span>
               </div>
-              <div class="timeline-company">Coriolis Technologies Pvt. Ltd • Pune</div>
               <div class="experience-details">
                 <div class="exp-item"><span class="exp-icon">⚙️</span><p>Implemented Celery for automated background report generation, improving workflow throughput by 30%.</p></div>
                 <div class="exp-item"><span class="exp-icon">🛡️</span><p>Engineered secure, scalable REST APIs using Django REST Framework (DRF), enhancing system reliability.</p></div>
                 <div class="exp-item"><span class="exp-icon">🚀</span><p>Scaled APIs to handle 100,000+ daily transactions using Redis caching and optimized queries.</p></div>
                 <div class="exp-item"><span class="exp-icon">📈</span><p>Achieved 30% improvement in PostgreSQL performance through strategic indexing and schema design.</p></div>
                 <div class="exp-item"><span class="exp-icon">⚡</span><p>Integrated WebSockets for real-time notifications, reducing latency for live system alerts.</p></div>
-                <div class="exp-item"><span class="exp-icon">🐳</span><p>Deployed workloads using Docker and Kubernetes, enabling automated deployments via GitLab CI/CD.</p></div>
-                <div class="exp-item"><span class="exp-icon">🔄</span><p>Streamlined production deployments, cutting deployment time by 70% with NGINX and uWSGI.</p></div>
               </div>
             </div>
-          </div>
-
-          <!-- Previous Position -->
-          <div class="timeline-item glass">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <div class="timeline-header">
-                <h3>Backend Developer Intern</h3>
-                <span class="timeline-period">May 2022 – July 2023</span>
+            <div class="tab-panel" id="job-2" role="tabpanel" aria-labelledby="btn-job-2">
+              <div class="panel-header">
+                <h3>Backend Developer Intern @ Coriolis Technologies</h3>
+                <span class="panel-period">May 2022 – July 2023</span>
               </div>
-              <div class="timeline-company">Coriolis Technologies Pvt. Ltd • Pune</div>
               <div class="experience-details">
                 <div class="exp-item"><span class="exp-icon">📄</span><p>Developed reusable Angular components, reducing front-end build time by 15%.</p></div>
                 <div class="exp-item"><span class="exp-icon">📊</span><p>Designed scalable REST APIs with Django, achieving 99.9% uptime and improved performance.</p></div>
                 <div class="exp-item"><span class="exp-icon">🛠️</span><p>Reduced build failures by 20% through optimized GitLab CI/CD pipeline architecture.</p></div>
                 <div class="exp-item"><span class="exp-icon">📦</span><p>Containerized backend, API, and frontend services using Docker for modular deployment.</p></div>
-                <div class="exp-item"><span class="exp-icon">⚡</span><p>Integrated Celery + Redis for background processing, increasing application responsiveness.</p></div>
               </div>
             </div>
           </div>
@@ -159,204 +154,57 @@
     <section id="skills" class="section">
       <div class="container">
         <h2>Technical Skills</h2>
-        <div class="skill-grid">
-          <!-- Skill item example -->
-          <div class="skill-item glass" data-proficiency="95">
-            <div class="skill-icon-wrapper">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python logo" />
-              <div class="skill-glow"></div>
-            </div>
-            <span class="skill-name">Python</span>
-            <div class="skill-bar">
-              <div class="skill-bar-fill" style="width: 95%"></div>
-            </div>
+        
+        <div class="skill-category">
+          <h3>Backend</h3>
+          <div class="skill-grid">
+            <div class="skill-item glass" data-proficiency="95"><div class="skill-icon-wrapper"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python logo" /><div class="skill-glow"></div></div><span class="skill-name">Python</span><div class="skill-bar"><div class="skill-bar-fill" style="width: 95%"></div></div></div>
+            <div class="skill-item glass" data-proficiency="95"><div class="skill-icon-wrapper"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django logo" /><div class="skill-glow"></div></div><span class="skill-name">Django</span><div class="skill-bar"><div class="skill-bar-fill" style="width: 95%"></div></div></div>
+            <div class="skill-item glass" data-proficiency="90"><div class="skill-icon-wrapper"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL logo" /><div class="skill-glow"></div></div><span class="skill-name">PostgreSQL</span><div class="skill-bar"><div class="skill-bar-fill" style="width: 90%"></div></div></div>
+            <div class="skill-item glass" data-proficiency="88"><div class="skill-icon-wrapper"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" alt="Redis logo" /><div class="skill-glow"></div></div><span class="skill-name">Redis</span><div class="skill-bar"><div class="skill-bar-fill" style="width: 88%"></div></div></div>
+            <div class="skill-item glass" data-proficiency="85"><div class="skill-icon-wrapper"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" alt="Flask logo" /><div class="skill-glow"></div></div><span class="skill-name">Flask</span><div class="skill-bar"><div class="skill-bar-fill" style="width: 85%"></div></div></div>
           </div>
+        </div>
 
-          <div class="skill-item glass" data-proficiency="85">
-            <div class="skill-icon-wrapper">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript logo" />
-              <div class="skill-glow"></div>
-            </div>
-            <span class="skill-name">TypeScript</span>
-            <div class="skill-bar">
-              <div class="skill-bar-fill" style="width: 85%"></div>
-            </div>
+        <div class="skill-category">
+          <h3>Frontend</h3>
+          <div class="skill-grid">
+            <div class="skill-item glass" data-proficiency="85"><div class="skill-icon-wrapper"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript logo" /><div class="skill-glow"></div></div><span class="skill-name">TypeScript</span><div class="skill-bar"><div class="skill-bar-fill" style="width: 85%"></div></div></div>
+            <div class="skill-item glass" data-proficiency="90"><div class="skill-icon-wrapper"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript logo" /><div class="skill-glow"></div></div><span class="skill-name">JavaScript</span><div class="skill-bar"><div class="skill-bar-fill" style="width: 90%"></div></div></div>
+            <div class="skill-item glass" data-proficiency="80"><div class="skill-icon-wrapper"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="Angular logo" /><div class="skill-glow"></div></div><span class="skill-name">Angular</span><div class="skill-bar"><div class="skill-bar-fill" style="width: 80%"></div></div></div>
+            <div class="skill-item glass" data-proficiency="75"><div class="skill-icon-wrapper"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React logo" /><div class="skill-glow"></div></div><span class="skill-name">React</span><div class="skill-bar"><div class="skill-bar-fill" style="width: 75%"></div></div></div>
           </div>
+        </div>
 
-          <div class="skill-item glass" data-proficiency="90">
-            <div class="skill-icon-wrapper">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript logo" />
-              <div class="skill-glow"></div>
-            </div>
-            <span class="skill-name">JavaScript</span>
-            <div class="skill-bar">
-              <div class="skill-bar-fill" style="width: 90%"></div>
-            </div>
+        <div class="skill-category">
+          <h3>Cloud Tools</h3>
+          <div class="skill-grid">
+            <div class="skill-item glass" data-proficiency="88"><div class="skill-icon-wrapper"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" /><div class="skill-glow"></div></div><span class="skill-name">AWS</span><div class="skill-bar"><div class="skill-bar-fill" style="width: 88%"></div></div></div>
+            <div class="skill-item glass" data-proficiency="85"><div class="skill-icon-wrapper"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="GCP logo" /><div class="skill-glow"></div></div><span class="skill-name">GCP</span><div class="skill-bar"><div class="skill-bar-fill" style="width: 85%"></div></div></div>
           </div>
+        </div>
 
-          <div class="skill-item glass" data-proficiency="95">
-            <div class="skill-icon-wrapper">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django logo" />
-              <div class="skill-glow"></div>
-            </div>
-            <span class="skill-name">Django</span>
-            <div class="skill-bar">
-              <div class="skill-bar-fill" style="width: 95%"></div>
-            </div>
+        <div class="skill-category">
+          <h3>AI Tools</h3>
+          <div class="skill-grid">
+            <div class="skill-item glass" data-proficiency="90"><div class="skill-icon-wrapper"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub Copilot" /><div class="skill-glow"></div></div><span class="skill-name">GitHub Copilot</span><div class="skill-bar"><div class="skill-bar-fill" style="width: 90%"></div></div></div>
+            <div class="skill-item glass" data-proficiency="88"><div class="skill-icon-wrapper"><img src="assets/cursor.png" alt="Cursor AI" /><div class="skill-glow"></div></div><span class="skill-name">Cursor AI</span><div class="skill-bar"><div class="skill-bar-fill" style="width: 88%"></div></div></div>
+            <div class="skill-item glass" data-proficiency="95"><div class="skill-icon-wrapper"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code" /><div class="skill-glow"></div></div><span class="skill-name">VS Code</span><div class="skill-bar"><div class="skill-bar-fill" style="width: 95%"></div></div></div>
           </div>
-
-          <div class="skill-item glass" data-proficiency="90">
-            <div class="skill-icon-wrapper">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL logo" />
-              <div class="skill-glow"></div>
-            </div>
-            <span class="skill-name">PostgreSQL</span>
-            <div class="skill-bar">
-              <div class="skill-bar-fill" style="width: 90%"></div>
-            </div>
+        </div>
+        <div class="skill-category">
+          <h3>DevOps</h3>
+          <div class="skill-grid">
+            <div class="skill-item glass" data-proficiency="92"><div class="skill-icon-wrapper"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker logo" /><div class="skill-glow"></div></div><span class="skill-name">Docker</span><div class="skill-bar"><div class="skill-bar-fill" style="width: 92%"></div></div></div>
+            <div class="skill-item glass" data-proficiency="88"><div class="skill-icon-wrapper"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes logo" /><div class="skill-glow"></div></div><span class="skill-name">Kubernetes</span><div class="skill-bar"><div class="skill-bar-fill" style="width: 88%"></div></div></div>
+            <div class="skill-item glass" data-proficiency="85"><div class="skill-icon-wrapper"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg" alt="Jenkins logo" /><div class="skill-glow"></div></div><span class="skill-name">Jenkins</span><div class="skill-bar"><div class="skill-bar-fill" style="width: 85%"></div></div></div>
           </div>
-
-          <div class="skill-item glass" data-proficiency="88">
-            <div class="skill-icon-wrapper">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" alt="Redis logo" />
-              <div class="skill-glow"></div>
-            </div>
-            <span class="skill-name">Redis</span>
-            <div class="skill-bar">
-              <div class="skill-bar-fill" style="width: 88%"></div>
-            </div>
-          </div>
-
-          <div class="skill-item glass" data-proficiency="92">
-            <div class="skill-icon-wrapper">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker logo" />
-              <div class="skill-glow"></div>
-            </div>
-            <span class="skill-name">Docker</span>
-            <div class="skill-bar">
-              <div class="skill-bar-fill" style="width: 92%"></div>
-            </div>
-          </div>
-
-          <div class="skill-item glass" data-proficiency="85">
-            <div class="skill-icon-wrapper">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes logo" />
-              <div class="skill-glow"></div>
-            </div>
-            <span class="skill-name">Kubernetes</span>
-            <div class="skill-bar">
-              <div class="skill-bar-fill" style="width: 85%"></div>
-            </div>
-          </div>
-
-          <div class="skill-item glass" data-proficiency="90">
-            <div class="skill-icon-wrapper">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg" alt="GitLab logo" />
-              <div class="skill-glow"></div>
-            </div>
-            <span class="skill-name">GitLab CI/CD</span>
-            <div class="skill-bar">
-              <div class="skill-bar-fill" style="width: 90%"></div>
-            </div>
-          </div>
-
-          <div class="skill-item glass" data-proficiency="87">
-            <div class="skill-icon-wrapper">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" alt="NGINX logo" />
-              <div class="skill-glow"></div>
-            </div>
-            <span class="skill-name">NGINX</span>
-            <div class="skill-bar">
-              <div class="skill-bar-fill" style="width: 87%"></div>
-            </div>
-          </div>
-
-          <div class="skill-item glass" data-proficiency="88">
-            <div class="skill-icon-wrapper">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS"  />
-              <div class="skill-glow"></div>
-            </div>
-            <span class="skill-name">AWS</span>
-            <div class="skill-bar">
-              <div class="skill-bar-fill" style="width: 88%"></div>
-            </div>
-          </div>
-
-          <div class="skill-item glass" data-proficiency="85">
-            <div class="skill-icon-wrapper">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="GCP logo" />
-              <div class="skill-glow"></div>
-            </div>
-            <span class="skill-name">GCP</span>
-            <div class="skill-bar">
-              <div class="skill-bar-fill" style="width: 85%"></div>
-            </div>
-          </div>
-
-          <div class="skill-item glass" data-proficiency="90">
-            <div class="skill-icon-wrapper">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg" alt="Jira logo" />
-              <div class="skill-glow"></div>
-            </div>
-            <span class="skill-name">Jira</span>
-            <div class="skill-bar">
-              <div class="skill-bar-fill" style="width: 90%"></div>
-            </div>
-          </div>
-
-          <div class="skill-item glass" data-proficiency="88">
-            <div class="skill-icon-wrapper">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/confluence/confluence-original.svg" alt="Confluence logo" />
-              <div class="skill-glow"></div>
-            </div>
-            <span class="skill-name">Confluence</span>
-            <div class="skill-bar">
-              <div class="skill-bar-fill" style="width: 88%"></div>
-            </div>
-          </div>
-
-          <div class="skill-item glass" data-proficiency="85">
-            <div class="skill-icon-wrapper">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg" alt="Jenkins logo" />
-              <div class="skill-glow"></div>
-            </div>
-            <span class="skill-name">Jenkins</span>
-            <div class="skill-bar">
-              <div class="skill-bar-fill" style="width: 85%"></div>
-            </div>
-          </div>
-
-          <div class="skill-item glass" data-proficiency="80">
-            <div class="skill-icon-wrapper">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="Angular logo" />
-              <div class="skill-glow"></div>
-            </div>
-            <span class="skill-name">Angular</span>
-            <div class="skill-bar">
-              <div class="skill-bar-fill" style="width: 80%"></div>
-            </div>
-          </div>
-
-          <div class="skill-item glass" data-proficiency="85">
-            <div class="skill-icon-wrapper">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" alt="Flask logo" />
-              <div class="skill-glow"></div>
-            </div>
-            <span class="skill-name">Flask</span>
-            <div class="skill-bar">
-              <div class="skill-bar-fill" style="width: 85%"></div>
-            </div>
-          </div>
-
-          <div class="skill-item glass" data-proficiency="75">
-            <div class="skill-icon-wrapper">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React logo" />
-              <div class="skill-glow"></div>
-            </div>
-            <span class="skill-name">React</span>
-            <div class="skill-bar">
-              <div class="skill-bar-fill" style="width: 75%"></div>
-            </div>
+        </div>
+        <div class="skill-category">
+          <h3>Collaboration Tools</h3>
+          <div class="skill-grid">
+            <div class="skill-item glass" data-proficiency="90"><div class="skill-icon-wrapper"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg" alt="Jira logo" /><div class="skill-glow"></div></div><span class="skill-name">Jira</span><div class="skill-bar"><div class="skill-bar-fill" style="width: 90%"></div></div></div>
+            <div class="skill-item glass" data-proficiency="88"><div class="skill-icon-wrapper"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/confluence/confluence-original.svg" alt="Confluence logo" /><div class="skill-glow"></div></div><span class="skill-name">Confluence</span><div class="skill-bar"><div class="skill-bar-fill" style="width: 88%"></div></div></div>
           </div>
         </div>
       </div>
