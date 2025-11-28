@@ -12,6 +12,14 @@
     <div class="container navbar-inner">
       <h1 class="logo"><a href="#about">Arman Sikriwal</a></h1>
 
+      <nav id="primary-navigation" class="nav-menu" role="navigation" aria-label="Primary">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
       <div class="controls">
         <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open menu">
           <span class="bar" aria-hidden="true"></span>
@@ -22,15 +30,10 @@
         <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme" title="Toggle light / dark">
           <span id="theme-icon" aria-hidden="true">🌙</span>
         </button>
+
+        <a href="assets/ArmanSikriwal3Years.pdf" class="btn-cv" download="ArmanSikriwal-CV.pdf">Download CV</a>
       </div>
 
-      <nav id="primary-navigation" class="nav-menu" role="navigation" aria-label="Primary">
-        <a href="#about" class="nav-link">About</a>
-        <a href="#experience" class="nav-link">Experience</a>
-        <a href="#skills" class="nav-link">Skills</a>
-        <a href="#projects" class="nav-link">Projects</a>
-        <a href="#contact" class="nav-link">Contact</a>
-      </nav>
     </div>
   </header>
 
@@ -38,6 +41,11 @@
     <section id="about" class="section">
       <div class="container">
         <div class="about-header glass">
+          <div class="about-photo">
+            <svg class="placeholder-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+            </svg>
+          </div>
           <div class="about-content">
             <h2>About Me</h2>
             <p class="about-text">
@@ -47,6 +55,7 @@
               automation using GitLab, cloud environments (AWS/GCP), and system observability tooling. Adept at Agile
               workflows and delivering production-grade features for enterprise and SaaS applications.
             </p>
+            <a href="assets/ArmanSikriwal3Years.pdf" class="btn-cv about-cv-btn" download="ArmanSikriwal-CV.pdf">Download CV</a>
           </div>
         </div>
         
@@ -113,15 +122,15 @@
                 <span class="timeline-period">Aug 2023 – Present</span>
               </div>
               <div class="timeline-company">Coriolis Technologies Pvt. Ltd • Pune</div>
-              <ul class="timeline-achievements">
-                <li>Implemented Celery for automated background report generation, improving workflow throughput by 30% and reducing synchronous load</li>
-                <li>Engineered secure, scalable REST APIs using Django REST Framework (DRF), enhancing system reliability and authentication workflows (JWT/OAuth2)</li>
-                <li>Scaled APIs to handle 100,000+ daily transactions using Redis caching, optimized ORM queries, and load balancing strategies</li>
-                <li>Achieved 30% improvement in PostgreSQL performance through indexing, query optimization, and efficient schema design</li>
-                <li>Integrated WebSockets for real-time notifications, reducing latency for live system alerts</li>
-                <li>Deployed workloads using Docker and Kubernetes, configuring GitLab Runner pods and enabling CI/CD-driven automated deployments</li>
-                <li>Streamlined production deployments via NGINX, uWSGI, and GitLab CI/CD, cutting deployment time by 70%</li>
-              </ul>
+              <div class="experience-details">
+                <div class="exp-item"><span class="exp-icon">⚙️</span><p>Implemented Celery for automated background report generation, improving workflow throughput by 30%.</p></div>
+                <div class="exp-item"><span class="exp-icon">🛡️</span><p>Engineered secure, scalable REST APIs using Django REST Framework (DRF), enhancing system reliability.</p></div>
+                <div class="exp-item"><span class="exp-icon">🚀</span><p>Scaled APIs to handle 100,000+ daily transactions using Redis caching and optimized queries.</p></div>
+                <div class="exp-item"><span class="exp-icon">📈</span><p>Achieved 30% improvement in PostgreSQL performance through strategic indexing and schema design.</p></div>
+                <div class="exp-item"><span class="exp-icon">⚡</span><p>Integrated WebSockets for real-time notifications, reducing latency for live system alerts.</p></div>
+                <div class="exp-item"><span class="exp-icon">🐳</span><p>Deployed workloads using Docker and Kubernetes, enabling automated deployments via GitLab CI/CD.</p></div>
+                <div class="exp-item"><span class="exp-icon">🔄</span><p>Streamlined production deployments, cutting deployment time by 70% with NGINX and uWSGI.</p></div>
+              </div>
             </div>
           </div>
 
@@ -134,13 +143,13 @@
                 <span class="timeline-period">May 2022 – July 2023</span>
               </div>
               <div class="timeline-company">Coriolis Technologies Pvt. Ltd • Pune</div>
-              <ul class="timeline-achievements">
-                <li>Developed reusable Angular components, reducing front-end build time by 15%</li>
-                <li>Designed scalable REST APIs with Django and DRF, achieving 99.9% uptime and improved API response performance</li>
-                <li>Reduced build failures by 20% through optimized GitLab CI/CD pipeline architecture</li>
-                <li>Containerized backend, API, and frontend services using Docker, enabling modular deployment and microservice alignment</li>
-                <li>Integrated Celery + Redis for background processing and caching, increasing application responsiveness</li>
-              </ul>
+              <div class="experience-details">
+                <div class="exp-item"><span class="exp-icon">📄</span><p>Developed reusable Angular components, reducing front-end build time by 15%.</p></div>
+                <div class="exp-item"><span class="exp-icon">📊</span><p>Designed scalable REST APIs with Django, achieving 99.9% uptime and improved performance.</p></div>
+                <div class="exp-item"><span class="exp-icon">🛠️</span><p>Reduced build failures by 20% through optimized GitLab CI/CD pipeline architecture.</p></div>
+                <div class="exp-item"><span class="exp-icon">📦</span><p>Containerized backend, API, and frontend services using Docker for modular deployment.</p></div>
+                <div class="exp-item"><span class="exp-icon">⚡</span><p>Integrated Celery + Redis for background processing, increasing application responsiveness.</p></div>
+              </div>
             </div>
           </div>
         </div>
@@ -283,6 +292,72 @@
               <div class="skill-bar-fill" style="width: 85%"></div>
             </div>
           </div>
+
+          <div class="skill-item glass" data-proficiency="90">
+            <div class="skill-icon-wrapper">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg" alt="Jira logo" />
+              <div class="skill-glow"></div>
+            </div>
+            <span class="skill-name">Jira</span>
+            <div class="skill-bar">
+              <div class="skill-bar-fill" style="width: 90%"></div>
+            </div>
+          </div>
+
+          <div class="skill-item glass" data-proficiency="88">
+            <div class="skill-icon-wrapper">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/confluence/confluence-original.svg" alt="Confluence logo" />
+              <div class="skill-glow"></div>
+            </div>
+            <span class="skill-name">Confluence</span>
+            <div class="skill-bar">
+              <div class="skill-bar-fill" style="width: 88%"></div>
+            </div>
+          </div>
+
+          <div class="skill-item glass" data-proficiency="85">
+            <div class="skill-icon-wrapper">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg" alt="Jenkins logo" />
+              <div class="skill-glow"></div>
+            </div>
+            <span class="skill-name">Jenkins</span>
+            <div class="skill-bar">
+              <div class="skill-bar-fill" style="width: 85%"></div>
+            </div>
+          </div>
+
+          <div class="skill-item glass" data-proficiency="80">
+            <div class="skill-icon-wrapper">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="Angular logo" />
+              <div class="skill-glow"></div>
+            </div>
+            <span class="skill-name">Angular</span>
+            <div class="skill-bar">
+              <div class="skill-bar-fill" style="width: 80%"></div>
+            </div>
+          </div>
+
+          <div class="skill-item glass" data-proficiency="85">
+            <div class="skill-icon-wrapper">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" alt="Flask logo" />
+              <div class="skill-glow"></div>
+            </div>
+            <span class="skill-name">Flask</span>
+            <div class="skill-bar">
+              <div class="skill-bar-fill" style="width: 85%"></div>
+            </div>
+          </div>
+
+          <div class="skill-item glass" data-proficiency="75">
+            <div class="skill-icon-wrapper">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React logo" />
+              <div class="skill-glow"></div>
+            </div>
+            <span class="skill-name">React</span>
+            <div class="skill-bar">
+              <div class="skill-bar-fill" style="width: 75%"></div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -380,6 +455,11 @@
       <div class="container">
         <h2>Contact</h2>
         <div class="contact-links">
+          <a href="tel:8919687678" class="contact-link" aria-label="Phone">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+              <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+            </svg>
+          </a>
           <a href="mailto:armansikriwal@gmail.com" class="contact-link" aria-label="Email">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
               <path d="M12 12.713l-11.985-9.713h23.97l-11.985 9.713zm0 2.574l-12-9.725v15.438h24v-15.438l-12 9.725z"/>
