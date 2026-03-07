@@ -3,104 +3,85 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Arman Sikriwal | Portfolio</title>
-  <meta name="description" content="Arman Sikriwal — Backend Developer (Python/Django). Portfolio showing skills and projects." />
+  <title>Arman Sikriwal | Backend Developer</title>
+  <meta name="description" content="Portfolio of Arman Sikriwal, Backend Developer specializing in Python (FastAPI, Django), Node.js, Cloud architectures, and microservices." />
   <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 </head>
-<body>
+<body class="dark-theme">
+  <!-- Navbar Section -->
   <header class="navbar" role="banner">
     <div class="container navbar-inner">
-      <h1 class="logo"><a href="#about">Arman Sikriwal</a></h1>
+      <h1 class="logo"><a href="#about" class="gradient-text">Arman Sikriwal</a></h1>
 
       <nav id="primary-navigation" class="nav-menu" role="navigation" aria-label="Primary">
         <a href="#about" class="nav-link">About</a>
         <a href="#experience" class="nav-link">Experience</a>
-        <a href="#skills" class="nav-link">Skills</a>
         <a href="#projects" class="nav-link">Projects</a>
+        <a href="#skills" class="nav-link">Skills</a>
         <a href="#contact" class="nav-link">Contact</a>
       </nav>
 
       <div class="controls">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme" title="Toggle light / dark">
+          <span id="theme-icon" aria-hidden="true">☀️</span>
+        </button>
+
         <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open menu">
           <span class="bar" aria-hidden="true"></span>
           <span class="bar" aria-hidden="true"></span>
           <span class="bar" aria-hidden="true"></span>
         </button>
 
-        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme" title="Toggle light / dark">
-          <span id="theme-icon" aria-hidden="true">🌙</span>
-        </button>
-
-        <a href="assets/ArmanSikriwal3Years.pdf" class="btn-cv" download="ArmanSikriwal-CV.pdf">Download CV</a>
+        <a href="assets/ArmanSikriwal3Years.pdf" class="btn-primary" download="Arman_Sikriwal_Resume.pdf">
+          <svg style="width: 18px; height: 18px" fill="currentColor" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+          Resume
+        </a>
       </div>
-
     </div>
   </header>
 
   <main>
+    <!-- About Section -->
     <section id="about" class="section">
       <div class="container">
-        <div class="about-header glass">
+        <div class="about-header glass card-hover">
           <div class="about-photo">
-            <img src="assets/arman.jpeg" alt="Arman Sikriwal" class="profile-picture" />
+            <img src="assets/arman.jpeg" alt="Arman Sikriwal" class="profile-picture" loading="lazy" />
           </div>
           <div class="about-content">
-            <h2>About Me</h2>
+            <h2 class="gradient-text">Hello, I'm Arman Sikriwal</h2>
             <p class="about-text">
-              Backend Developer (Python/Django) with 3+ years of experience building scalable, secure, and high-performance
-              backend systems. Strong expertise in REST API development, database optimization (PostgreSQL, Redis),
-              asynchronous task processing (Celery), and containerized deployments (Docker, Kubernetes). Skilled in CI/CD
-              automation using GitLab, cloud environments (AWS/GCP), and system observability tooling. Adept at Agile
-              workflows and delivering production-grade features for enterprise and SaaS applications.
+              Backend Developer with <strong>4 years of experience</strong> building high-performance microservices using Python (FastAPI, Django) and Node.js. Strong expertise in REST API design, automated testing with Pytest, Kubernetes-based deployments, and distributed systems. Experienced in optimizing PostgreSQL queries, implementing Redis caching, and supporting CI/CD-driven cloud-native environments.
             </p>
-            <a href="assets/ArmanSikriwal3Years.pdf" class="btn-cv about-cv-btn" download="ArmanSikriwal-CV.pdf">Download CV</a>
+            <div style="display: flex; gap: 16px;">
+              <a href="assets/ArmanSikriwal3Years.pdf" class="btn-primary" download="Arman_Sikriwal_Resume.pdf">Download Resume</a>
+              <a href="#experience" class="btn-primary" style="background: transparent; border: 1px solid var(--accent); color: var(--text-primary); box-shadow: none;">View Experience</a>
+            </div>
           </div>
         </div>
         
         <!-- Stats Grid -->
         <div class="stats-grid">
-          <div class="stat-card glass">
+          <div class="stat-card glass card-hover">
             <div class="stat-icon">💼</div>
-            <div class="stat-number">3+</div>
-            <div class="stat-label">Years Experience</div>
+            <div class="stat-number">4</div>
+            <div class="stat-label">Years of Experience</div>
           </div>
-          <div class="stat-card glass">
+          <div class="stat-card glass card-hover">
             <div class="stat-icon">🚀</div>
-            <div class="stat-number">100K+</div>
-            <div class="stat-label">Daily Transactions</div>
+            <div class="stat-number">50K+</div>
+            <div class="stat-label">Daily API Requests</div>
           </div>
-          <div class="stat-card glass">
+          <div class="stat-card glass card-hover">
             <div class="stat-icon">⚡</div>
-            <div class="stat-number">70%</div>
-            <div class="stat-label">Deploy Time Reduced</div>
+            <div class="stat-number">45%</div>
+            <div class="stat-label">Latency Reduced</div>
           </div>
-          <div class="stat-card glass">
-            <div class="stat-icon">✨</div>
-            <div class="stat-number">99.9%</div>
-            <div class="stat-label">API Uptime</div>
-          </div>
-        </div>
-
-        <!-- Highlights -->
-        <div class="highlights-section">
-          <h3 class="highlights-title">Key Highlights</h3>
-          <div class="highlights-grid">
-            <div class="highlight-card glass">
-              <span class="highlight-icon">🎯</span>
-              <p>Scaled APIs to handle 100,000+ daily transactions with Redis caching and optimized queries</p>
-            </div>
-            <div class="highlight-card glass">
-              <span class="highlight-icon">📈</span>
-              <p>Achieved 30% improvement in PostgreSQL performance through strategic indexing</p>
-            </div>
-            <div class="highlight-card glass">
-              <span class="highlight-icon">🔄</span>
-              <p>Streamlined deployments via GitLab CI/CD, reducing deployment time by 70%</p>
-            </div>
-            <div class="highlight-card glass">
-              <span class="highlight-icon">🛠️</span>
-              <p>Implemented Celery for background processing, improving workflow throughput by 30%</p>
-            </div>
+          <div class="stat-card glass card-hover">
+            <div class="stat-icon">☁️</div>
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Cloud Native</div>
           </div>
         </div>
       </div>
@@ -110,102 +91,46 @@
     <section id="experience" class="section">
       <div class="container">
         <h2>Professional Experience</h2>
-        <div class="experience-tabs">
-          <div class="tab-list" role="tablist" aria-label="Job History">
-            <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="job-1" id="btn-job-1">
-              Member of Technical Staff
-            </button>
-            <button class="tab-btn" role="tab" aria-selected="false" aria-controls="job-2" id="btn-job-2">
-              Backend Developer Intern
-            </button>
-          </div>
-
-          <div class="tab-panels">
-            <div class="tab-panel active" id="job-1" role="tabpanel" aria-labelledby="btn-job-1">
-              <div class="panel-header">
-                <h3>Member of Technical Staff @ Coriolis Technologies</h3>
-                <span class="panel-period">Aug 2023 – Present</span>
+        <div class="experience-container">
+          
+          <!-- Job 1 -->
+          <div class="exp-card glass card-hover">
+            <div class="exp-header">
+              <div>
+                <h3 class="exp-title">Member of Technical Staff - Backend Developer</h3>
+                <span class="exp-company">Coriolis Technologies Pvt. Ltd, Pune</span>
               </div>
-              <div class="experience-details">
-                <div class="exp-item"><span class="exp-icon">⚙️</span><p>Implemented Celery for automated background report generation, improving workflow throughput by 30%.</p></div>
-                <div class="exp-item"><span class="exp-icon">🛡️</span><p>Engineered secure, scalable REST APIs using Django REST Framework (DRF), enhancing system reliability.</p></div>
-                <div class="exp-item"><span class="exp-icon">🚀</span><p>Scaled APIs to handle 100,000+ daily transactions using Redis caching and optimized queries.</p></div>
-                <div class="exp-item"><span class="exp-icon">📈</span><p>Achieved 30% improvement in PostgreSQL performance through strategic indexing and schema design.</p></div>
-                <div class="exp-item"><span class="exp-icon">⚡</span><p>Integrated WebSockets for real-time notifications, reducing latency for live system alerts.</p></div>
-              </div>
+              <span class="exp-date">Aug 2023 – Present</span>
             </div>
-            <div class="tab-panel" id="job-2" role="tabpanel" aria-labelledby="btn-job-2">
-              <div class="panel-header">
-                <h3>Backend Developer Intern @ Coriolis Technologies</h3>
-                <span class="panel-period">May 2022 – July 2023</span>
+            <ul class="exp-details">
+              <li class="exp-item"><span class="exp-icon">🔹</span><p>Designed and developed production-grade backend microservices serving 50K+ daily requests.</p></li>
+              <li class="exp-item"><span class="exp-icon">🔹</span><p>Built RESTful APIs with validation, versioning, JWT-based authentication, and RBAC.</p></li>
+              <li class="exp-item"><span class="exp-icon">🔹</span><p>Implemented automated testing using Pytest, improving code reliability and reducing production regressions.</p></li>
+              <li class="exp-item"><span class="exp-icon">🔹</span><p>Containerized services using Docker and deployed on Kubernetes clusters for scalable and fault-tolerant environments.</p></li>
+              <li class="exp-item"><span class="exp-icon">🔹</span><p>Optimized PostgreSQL queries and indexing strategies, reducing API latency by up to 45%.</p></li>
+              <li class="exp-item"><span class="exp-icon">🔹</span><p>Integrated Redis for caching and asynchronous task processing to improve throughput and response times.</p></li>
+              <li class="exp-item"><span class="exp-icon">🔹</span><p>Developed select REST APIs using Node.js, ensuring structured error handling and seamless microservice integration.</p></li>
+              <li class="exp-item"><span class="exp-icon">🔹</span><p>Contributed to GitLab CI/CD pipelines for automated testing, builds, and zero-downtime deployments.</p></li>
+            </ul>
+          </div>
+
+          <!-- Job 2 -->
+          <div class="exp-card glass card-hover">
+            <div class="exp-header">
+              <div>
+                <h3 class="exp-title">Backend Developer Intern</h3>
+                <span class="exp-company">Coriolis Technologies Pvt. Ltd, Pune</span>
               </div>
-              <div class="experience-details">
-                <div class="exp-item"><span class="exp-icon">📄</span><p>Developed reusable Angular components, reducing front-end build time by 15%.</p></div>
-                <div class="exp-item"><span class="exp-icon">📊</span><p>Designed scalable REST APIs with Django, achieving 99.9% uptime and improved performance.</p></div>
-                <div class="exp-item"><span class="exp-icon">🛠️</span><p>Reduced build failures by 20% through optimized GitLab CI/CD pipeline architecture.</p></div>
-                <div class="exp-item"><span class="exp-icon">📦</span><p>Containerized backend, API, and frontend services using Docker for modular deployment.</p></div>
-              </div>
+              <span class="exp-date">May 2022 – July 2023</span>
             </div>
+            <ul class="exp-details">
+              <li class="exp-item"><span class="exp-icon">🔹</span><p>Developed backend APIs using Django and FastAPI for internal platforms and dashboards.</p></li>
+              <li class="exp-item"><span class="exp-icon">🔹</span><p>Implemented asynchronous task processing using Celery and Redis to improve application efficiency.</p></li>
+              <li class="exp-item"><span class="exp-icon">🔹</span><p>Wrote unit tests and validated APIs using Postman to ensure correctness and reliability.</p></li>
+              <li class="exp-item"><span class="exp-icon">🔹</span><p>Participated in code reviews and followed Git-based agile workflows.</p></li>
+            </ul>
           </div>
-        </div>
-      </div>
-    </section>
 
-    <section id="skills" class="section">
-      <div class="container">
-        <h2>Technical Skills</h2>
-        
-        <div class="skill-category">
-          <h3>Backend</h3>
-          <div class="skill-grid">
-            <div class="skill-item glass" data-proficiency="95"><div class="skill-icon-wrapper"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python logo" /><div class="skill-glow"></div></div><span class="skill-name">Python</span><div class="skill-bar"><div class="skill-bar-fill" style="width: 95%"></div></div></div>
-            <div class="skill-item glass" data-proficiency="95"><div class="skill-icon-wrapper"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django logo" /><div class="skill-glow"></div></div><span class="skill-name">Django</span><div class="skill-bar"><div class="skill-bar-fill" style="width: 95%"></div></div></div>
-            <div class="skill-item glass" data-proficiency="90"><div class="skill-icon-wrapper"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL logo" /><div class="skill-glow"></div></div><span class="skill-name">PostgreSQL</span><div class="skill-bar"><div class="skill-bar-fill" style="width: 90%"></div></div></div>
-            <div class="skill-item glass" data-proficiency="88"><div class="skill-icon-wrapper"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" alt="Redis logo" /><div class="skill-glow"></div></div><span class="skill-name">Redis</span><div class="skill-bar"><div class="skill-bar-fill" style="width: 88%"></div></div></div>
-            <div class="skill-item glass" data-proficiency="85"><div class="skill-icon-wrapper"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="Fast Api logo" /><div class="skill-glow"></div></div><span class="skill-name">FastAPI</span><div class="skill-bar"><div class="skill-bar-fill" style="width: 85%"></div></div></div>
-          </div>
-        </div>
-
-        <div class="skill-category">
-          <h3>Frontend</h3>
-          <div class="skill-grid">
-            <div class="skill-item glass" data-proficiency="85"><div class="skill-icon-wrapper"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript logo" /><div class="skill-glow"></div></div><span class="skill-name">TypeScript</span><div class="skill-bar"><div class="skill-bar-fill" style="width: 85%"></div></div></div>
-            <div class="skill-item glass" data-proficiency="90"><div class="skill-icon-wrapper"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript logo" /><div class="skill-glow"></div></div><span class="skill-name">JavaScript</span><div class="skill-bar"><div class="skill-bar-fill" style="width: 90%"></div></div></div>
-            <div class="skill-item glass" data-proficiency="80"><div class="skill-icon-wrapper"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="Angular logo" /><div class="skill-glow"></div></div><span class="skill-name">Angular</span><div class="skill-bar"><div class="skill-bar-fill" style="width: 80%"></div></div></div>
-            <div class="skill-item glass" data-proficiency="75"><div class="skill-icon-wrapper"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React logo" /><div class="skill-glow"></div></div><span class="skill-name">React</span><div class="skill-bar"><div class="skill-bar-fill" style="width: 75%"></div></div></div>
-          </div>
-        </div>
-
-        <div class="skill-category">
-          <h3>Cloud Tools</h3>
-          <div class="skill-grid">
-            <div class="skill-item glass" data-proficiency="88"><div class="skill-icon-wrapper"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" /><div class="skill-glow"></div></div><span class="skill-name">AWS</span><div class="skill-bar"><div class="skill-bar-fill" style="width: 88%"></div></div></div>
-            <div class="skill-item glass" data-proficiency="85"><div class="skill-icon-wrapper"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="GCP logo" /><div class="skill-glow"></div></div><span class="skill-name">GCP</span><div class="skill-bar"><div class="skill-bar-fill" style="width: 85%"></div></div></div>
-          </div>
-        </div>
-
-        <div class="skill-category">
-          <h3>AI Tools</h3>
-          <div class="skill-grid">
-            <div class="skill-item glass" data-proficiency="90"><div class="skill-icon-wrapper"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub Copilot" /><div class="skill-glow"></div></div><span class="skill-name">GitHub Copilot</span><div class="skill-bar"><div class="skill-bar-fill" style="width: 90%"></div></div></div>
-            <div class="skill-item glass" data-proficiency="88"><div class="skill-icon-wrapper"><img src="assets/cursor.png" alt="Cursor AI" /><div class="skill-glow"></div></div><span class="skill-name">Cursor AI</span><div class="skill-bar"><div class="skill-bar-fill" style="width: 88%"></div></div></div>
-            <div class="skill-item glass" data-proficiency="95"><div class="skill-icon-wrapper"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code" /><div class="skill-glow"></div></div><span class="skill-name">VS Code</span><div class="skill-bar"><div class="skill-bar-fill" style="width: 95%"></div></div></div>
-          </div>
-        </div>
-        <div class="skill-category">
-          <h3>DevOps</h3>
-          <div class="skill-grid">
-            <div class="skill-item glass" data-proficiency="92"><div class="skill-icon-wrapper"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker logo" /><div class="skill-glow"></div></div><span class="skill-name">Docker</span><div class="skill-bar"><div class="skill-bar-fill" style="width: 92%"></div></div></div>
-            <div class="skill-item glass" data-proficiency="88"><div class="skill-icon-wrapper"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes logo" /><div class="skill-glow"></div></div><span class="skill-name">Kubernetes</span><div class="skill-bar"><div class="skill-bar-fill" style="width: 88%"></div></div></div>
-            <div class="skill-item glass" data-proficiency="85"><div class="skill-icon-wrapper"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg" alt="Jenkins logo" /><div class="skill-glow"></div></div><span class="skill-name">Jenkins</span><div class="skill-bar"><div class="skill-bar-fill" style="width: 85%"></div></div></div>
-          </div>
-        </div>
-        <div class="skill-category">
-          <h3>Collaboration Tools</h3>
-          <div class="skill-grid">
-            <div class="skill-item glass" data-proficiency="90"><div class="skill-icon-wrapper"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg" alt="Jira logo" /><div class="skill-glow"></div></div><span class="skill-name">Jira</span><div class="skill-bar"><div class="skill-bar-fill" style="width: 90%"></div></div></div>
-            <div class="skill-item glass" data-proficiency="88"><div class="skill-icon-wrapper"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/confluence/confluence-original.svg" alt="Confluence logo" /><div class="skill-glow"></div></div><span class="skill-name">Confluence</span><div class="skill-bar"><div class="skill-bar-fill" style="width: 88%"></div></div></div>
-          </div>
         </div>
       </div>
     </section>
@@ -215,118 +140,190 @@
       <div class="container">
         <h2>Featured Projects</h2>
         <div class="projects-grid">
-          <article class="project-card glass">
+          
+          <article class="project-card glass card-hover">
             <div class="project-header">
               <h3>ASRM Dashboard</h3>
               <span class="project-badge">June 2022 – Present</span>
             </div>
-            <p class="project-description">
-              Developed a real-time dashboard for system KPIs, improving operational visibility and reducing response time for critical events. Automated testing, build, and deployment pipelines via GitLab CI/CD.
-            </p>
             <div class="project-tech">
-              <span class="tech-tag">Python</span>
-              <span class="tech-tag">Angular</span>
-              <span class="tech-tag">TypeScript</span>
-              <span class="tech-tag">GitLab CI/CD</span>
+              <span class="tech-tag">Python/Django</span>
               <span class="tech-tag">WebSockets</span>
-              <span class="tech-tag">Celery</span>
-              <span class="tech-tag">Redis</span>
+              <span class="tech-tag">PostgreSQL</span>
+              <span class="tech-tag">GitLab CI/CD</span>
             </div>
+            <p class="project-description">
+              Designed backend services for real-time monitoring and analytics using Django and WebSockets. Implemented secure APIs and optimized database queries for high-frequency data ingestion.
+            </p>
             <div class="project-achievements">
               <div class="achievement-item">
-                <span class="achievement-icon">📊</span>
-                <span>45% improved release efficiency</span>
+                <span class="achievement-icon">⚡</span>
+                <span>Optimized ingestion rates for real-time analytics</span>
               </div>
               <div class="achievement-item">
-                <span class="achievement-icon">⚡</span>
-                <span>Real-time KPI visualization</span>
+                <span class="achievement-icon">🔄</span>
+                <span>Automated deployments via GitLab pipelines</span>
               </div>
             </div>
           </article>
 
-          <article class="project-card glass">
+          <article class="project-card glass card-hover">
             <div class="project-header">
               <h3>Compatibility Matrix Portal</h3>
-              <span class="project-badge">May 2023 – Present</span>
+              <span class="project-badge">May 2023 – Aug 2025</span>
+            </div>
+            <div class="project-tech">
+              <span class="tech-tag">FastAPI</span>
+              <span class="tech-tag">Django</span>
+              <span class="tech-tag">Docker</span>
+              <span class="tech-tag">PostgreSQL</span>
+              <span class="tech-tag">AWS</span>
             </div>
             <p class="project-description">
-              Built a secure AWS S3–integrated portal for cloud storage and access management, improving data integrity and client collaboration. Containerized system components using Docker for scalable deployment.
+              Developed backend APIs for managing compatibility datasets and validation workflows with strong authentication and structured error handling.
             </p>
-            <div class="project-tech">
-              <span class="tech-tag">Python/Django</span>
-              <span class="tech-tag">Angular</span>
-              <span class="tech-tag">AWS S3</span>
-              <span class="tech-tag">Docker</span>
-              <span class="tech-tag">Redis</span>
-            </div>
             <div class="project-achievements">
               <div class="achievement-item">
                 <span class="achievement-icon">☁️</span>
-                <span>Secure cloud integration</span>
+                <span>Multi-environment scalable deployment</span>
               </div>
               <div class="achievement-item">
-                <span class="achievement-icon">🚀</span>
-                <span>Enhanced performance with Redis caching</span>
+                <span class="achievement-icon">📦</span>
+                <span>Fully containerized backend architecture</span>
               </div>
             </div>
           </article>
+
         </div>
       </div>
     </section>
 
-    <!-- Education Section -->
-    <section id="education" class="section">
+    <!-- Skills Section -->
+    <section id="skills" class="section">
       <div class="container">
-        <h2>Education</h2>
-        <div class="education-card glass">
-          <div class="education-header">
-            <div class="education-main">
-              <h3>Bachelor of Technology (B.Tech.)</h3>
-              <p class="education-major">Computer Science and Engineering (CSE)</p>
-            </div>
-            <div class="education-gpa">
-              <span class="gpa-label">CGPA</span>
-              <span class="gpa-value">8.92</span>
+        <h2>Technical Arsenal</h2>
+        <div class="skills-container">
+
+          <div class="skill-category glass card-hover">
+            <h3><i class="devicon-python-plain colored"></i> Backend Core</h3>
+            <div class="skill-grid">
+              <div class="skill-item">
+                <div class="skill-icon-wrapper"><i class="devicon-python-plain colored" style="font-size: 40px;"></i></div>
+                <span class="skill-name">Python</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon-wrapper"><i class="devicon-fastapi-plain colored" style="font-size: 40px;"></i></div>
+                <span class="skill-name">FastAPI</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon-wrapper"><i class="devicon-django-plain colored" style="font-size: 40px;"></i></div>
+                <span class="skill-name">Django</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon-wrapper"><i class="devicon-nodejs-plain-wordmark colored" style="font-size: 40px;"></i></div>
+                <span class="skill-name">Node.js</span>
+              </div>
             </div>
           </div>
-          <div class="education-details">
-            <span class="education-university">Lovely Professional University</span>
-            <span class="education-location">📍 Jalandhar, Punjab</span>
-            <span class="education-period">Aug 2019 – June 2023</span>
+
+          <div class="skill-category glass card-hover">
+            <h3><i class="devicon-postgresql-plain colored"></i> DBs & Cache</h3>
+            <div class="skill-grid">
+              <div class="skill-item">
+                <div class="skill-icon-wrapper"><i class="devicon-postgresql-plain colored" style="font-size: 40px;"></i></div>
+                <span class="skill-name">PostgreSQL</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon-wrapper"><i class="devicon-redis-plain colored" style="font-size: 40px;"></i></div>
+                <span class="skill-name">Redis</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon-wrapper"><span style="font-size: 32px">📊</span></div>
+                <span class="skill-name">Query Opt.</span>
+              </div>
+            </div>
           </div>
+
+          <div class="skill-category glass card-hover">
+            <h3><i class="devicon-kubernetes-plain colored"></i> DevOps & Cloud</h3>
+            <div class="skill-grid">
+              <div class="skill-item">
+                <div class="skill-icon-wrapper"><i class="devicon-docker-plain colored" style="font-size: 40px;"></i></div>
+                <span class="skill-name">Docker</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon-wrapper"><i class="devicon-kubernetes-plain colored" style="font-size: 40px;"></i></div>
+                <span class="skill-name">Kubernetes</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon-wrapper"><i class="devicon-amazonwebservices-plain-wordmark colored" style="font-size: 40px;"></i></div>
+                <span class="skill-name">AWS</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon-wrapper"><i class="devicon-gitlab-plain colored" style="font-size: 40px;"></i></div>
+                <span class="skill-name">GitLab CI/CD</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-category glass card-hover">
+            <h3><i class="devicon-pytest-plain colored"></i> Testing & Other</h3>
+            <div class="skill-grid">
+              <div class="skill-item">
+                <div class="skill-icon-wrapper"><i class="devicon-pytest-plain colored" style="font-size: 40px;"></i></div>
+                <span class="skill-name">Pytest</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon-wrapper"><span style="font-size: 32px">🧪</span></div>
+                <span class="skill-name">Unit Testing</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon-wrapper"><i class="devicon-react-original colored" style="font-size: 40px;"></i></div>
+                <span class="skill-name">React / TS</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon-wrapper"><span style="font-size: 32px">📈</span></div>
+                <span class="skill-name">Monitoring</span>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
 
-
-    <section id="contact" class="section glass">
+    <!-- Contact Section -->
+    <section id="contact" class="section">
       <div class="container">
-        <h2>Contact</h2>
-        <div class="contact-links">
-          <a href="tel:8919687678" class="contact-link" aria-label="Phone">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
-              <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-            </svg>
-          </a>
-          <a href="mailto:armansikriwal@gmail.com" class="contact-link" aria-label="Email">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
-              <path d="M12 12.713l-11.985-9.713h23.97l-11.985 9.713zm0 2.574l-12-9.725v15.438h24v-15.438l-12 9.725z"/>
-            </svg>
-          </a>
-          <a href="https://linkedin.com/in/armansikriwal" target="_blank" rel="noopener noreferrer" class="contact-link" aria-label="LinkedIn">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
-              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-            </svg>
-          </a>
-          <a href="https://github.com/armansikriwal" target="_blank" rel="noopener noreferrer" class="contact-link" aria-label="GitHub">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
-              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-            </svg>
-          </a>
+        <div class="contact-section glass card-hover">
+          <h2 class="contact-title gradient-text">Let's Connect</h2>
+          <p class="contact-desc">
+            Currently open for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!
+          </p>
+          <div class="contact-links">
+            <a href="mailto:armansikriwal@gmail.com" class="contact-link" aria-label="Email">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            </a>
+            <a href="https://linkedin.com/in/armansikriwal" target="_blank" rel="noopener noreferrer" class="contact-link" aria-label="LinkedIn">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.16-3.6 3.09 3.09 0 0 0-2.84 1.56v-1.34h-3.16v8.68h3.16v-4.83a1.59 1.59 0 0 1 1.5-1.74 1.59 1.59 0 0 1 1.53 1.74v4.83h3.47M6.88 8.56a1.69 1.69 0 0 0 1.74-1.68 1.69 1.69 0 0 0-3.47 0 1.69 1.69 0 0 0 1.73 1.68m1.58 10.44V10.32H5.3v8.68h3.16z"/></svg>
+            </a>
+            <a href="https://github.com/armansikriwal" target="_blank" rel="noopener noreferrer" class="contact-link" aria-label="GitHub">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.45-1.15-1.11-1.46-1.11-1.46-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+            </a>
+            <a href="tel:8919687678" class="contact-link" aria-label="Phone">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
+            </a>
+          </div>
         </div>
       </div>
     </section>
   </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Arman Sikriwal. Built with logic &amp; passion.</p>
+    </div>
+  </footer>
 
   <script src="index.js" defer></script>
 </body>
