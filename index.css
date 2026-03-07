@@ -330,6 +330,7 @@ body.dark-theme .card-hover:hover {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top;
   transition: transform 0.5s ease;
 }
 .about-photo:hover .profile-picture {
@@ -397,6 +398,206 @@ body.dark-theme .card-hover:hover {
   color: var(--text-secondary);
   font-size: 0.95rem;
   margin-top: 5px;
+}
+
+/* --- Interactive Architecture Section --- */
+.arch-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  padding: 40px;
+}
+@media (max-width: 900px) {
+  .arch-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.arch-diagram {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding: 20px 0;
+}
+
+.arch-node {
+  background: var(--card-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 16px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  z-index: 2;
+  box-shadow: var(--shadow);
+  width: 180px;
+}
+.arch-node:hover, .arch-node.active {
+  transform: translateY(-5px) scale(1.05);
+  border-color: var(--accent);
+  box-shadow: 0 10px 30px var(--accent-glow);
+  background: rgba(59, 130, 246, 0.05);
+}
+.arch-node.active::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 16px;
+  padding: 2px;
+  background: var(--accent-gradient);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  pointer-events: none;
+}
+
+.node-icon {
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  color: var(--accent);
+}
+.node-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+/* Connectors */
+.arch-connector {
+  background: var(--glass-border);
+  position: relative;
+  z-index: 1;
+}
+.arch-connector.vertical {
+  width: 2px;
+  height: 40px;
+  margin: 0 auto;
+}
+.arch-split {
+  display: flex;
+  justify-content: center;
+  width: 240px; /* Distance between the two columns */
+  margin: 0 auto;
+}
+.arch-connector.horizontal-left,
+.arch-connector.horizontal-right {
+  height: 2px;
+  width: 50%;
+  position: relative;
+}
+.arch-connector.horizontal-left::before,
+.arch-connector.horizontal-left::after,
+.arch-connector.horizontal-right::before,
+.arch-connector.horizontal-right::after {
+  content: '';
+  position: absolute;
+  background: var(--glass-border);
+}
+/* Left downward hook */
+.arch-connector.horizontal-left::before {
+  right: 0; top: 0; width: 2px; height: 30px; /* Up to API Gateway */
+  transform: translateY(-100%);
+}
+.arch-connector.horizontal-left::after {
+  left: 0; top: 0; width: 2px; height: 30px; /* Down to Microservices */
+}
+/* Right downward hook */
+.arch-connector.horizontal-right::after {
+  right: 0; top: 0; width: 2px; height: 30px; /* Down to Redis/Async */
+}
+
+/* Flow Animation */
+.arch-node:hover ~ .arch-connector,
+.arch-node.active ~ .arch-connector,
+.arch-diagram:has(.arch-node.active) .arch-connector {
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent-glow);
+}
+
+.arch-row {
+  display: flex;
+  gap: 60px;
+  justify-content: center;
+  margin-top: 30px;
+}
+.arch-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Info Panel */
+.arch-info-panel {
+  height: 100%;
+  min-height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+}
+.arch-info-panel::after {
+  content: '';
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background: var(--accent-gradient);
+  opacity: 0.03;
+  pointer-events: none;
+}
+.info-content {
+  width: 100%;
+  animation: fadeIn 0.4s ease;
+}
+.info-placeholder {
+  text-align: center;
+  color: var(--text-secondary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+.info-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.info-desc {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+.info-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.info-tag {
+  background: var(--card-bg);
+  border: 1px solid var(--glass-border);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent);
 }
 
 /* --- Experience Section --- */

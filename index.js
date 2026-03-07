@@ -120,4 +120,78 @@ document.addEventListener('DOMContentLoaded', () => {
       targetPanel.classList.add('active');
     }
   }
+
+  // --- Interactive Architecture Diagram ---
+  const archNodes = document.querySelectorAll('.arch-node');
+  const infoContent = document.getElementById('info-content');
+
+  const archData = {
+    client: {
+      title: '🌐 Client Applications',
+      desc: 'Handling global traffic from web, mobile, and third-party integrations. Creating seamless API contracts for front-end consumers.',
+      tags: ['REST', 'GraphQL', 'WebSockets', 'Rate Limiting']
+    },
+    api: {
+      title: '🚀 API Gateway',
+      desc: 'Building robust, resilient API layers using FastAPI. Serving 50K+ daily requests securely with JWT authentication and strict Role-Based Access Control.',
+      tags: ['FastAPI', 'JWT Auth', 'RBAC', 'Validation']
+    },
+    services: {
+      title: '⚙️ Microservices Layer',
+      desc: 'Designing and developing production-grade business logic. Breaking down monoliths into high-performance, maintainable Python and Node.js microservices.',
+      tags: ['Python', 'Django', 'Node.js', 'Pytest']
+    },
+    database: {
+      title: '💾 Relational Databases',
+      desc: 'Architecting schemas and optimizing heavy queries in PostgreSQL. Reduced overall API latency by up to 45% through intelligent indexing and execution planning.',
+      tags: ['PostgreSQL', 'Query Optimization', 'Transactions']
+    },
+    async: {
+      title: '⚡ Async Task Processing',
+      desc: 'Integrating Redis and Celery to offload heavy computations, manage job queues, and implement high-speed caching layers for critical data.',
+      tags: ['Redis', 'Celery', 'Caching', 'Message Queues']
+    },
+    infra: {
+      title: '☁️ Cloud Infrastructure',
+      desc: '100% Cloud Native deployments. Containerizing services with Docker and orchestrating scalable, fault-tolerant clusters using Kubernetes on AWS.',
+      tags: ['Docker', 'Kubernetes', 'AWS', 'GitLab CI/CD']
+    }
+  };
+
+  if (archNodes.length && infoContent) {
+    archNodes.forEach(node => {
+      // Allow both click and hover for accessibility and engagement
+      ['click', 'mouseenter'].forEach(eventType => {
+        node.addEventListener(eventType, () => {
+          // Remove active state from all nodes
+          archNodes.forEach(n => n.classList.remove('active'));
+          // Add active state to current node
+          node.classList.add('active');
+
+          // Fetch data for the hovered node
+          const target = node.getAttribute('data-target');
+          const data = archData[target];
+
+          if (data) {
+            // Generate tags HTML
+            const tagsHtml = data.tags.map(tag => `<span class="info-tag">${tag}</span>`).join('');
+            
+            // Build new HTML content
+            const newContent = `
+              <div class="info-title">${data.title}</div>
+              <p class="info-desc">${data.desc}</p>
+              <div class="info-tags">${tagsHtml}</div>
+            `;
+
+            // Simple transition effect
+            infoContent.style.opacity = '0';
+            setTimeout(() => {
+              infoContent.innerHTML = newContent;
+              infoContent.style.opacity = '1';
+            }, 100);
+          }
+        });
+      });
+    });
+  }
 });

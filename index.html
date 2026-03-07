@@ -115,6 +115,76 @@
       </div>
     </section>
 
+    <!-- Interactive Architecture Section -->
+    <section id="interactive-arch" class="section">
+      <div class="container">
+        <h2>What I Do: The Big Picture</h2>
+        <div class="arch-container glass card-hover">
+          
+          <div class="arch-diagram">
+            <!-- Traffic / Client -->
+            <div class="arch-node" data-target="client">
+              <div class="node-icon">🌐</div>
+              <span class="node-label">Clients</span>
+            </div>
+            
+            <div class="arch-connector vertical"></div>
+
+            <!-- API Layer -->
+            <div class="arch-node" data-target="api">
+              <div class="node-icon"><i class="devicon-fastapi-plain colored"></i></div>
+              <span class="node-label">API Gateway</span>
+            </div>
+
+            <div class="arch-split">
+              <div class="arch-connector horizontal-left"></div>
+              <div class="arch-connector horizontal-right"></div>
+            </div>
+
+            <div class="arch-row">
+              <!-- Services Layer -->
+              <div class="arch-col">
+                <div class="arch-node" data-target="services">
+                  <div class="node-icon"><i class="devicon-python-plain colored"></i></div>
+                  <span class="node-label">Microservices</span>
+                </div>
+                <div class="arch-connector vertical"></div>
+                <div class="arch-node db-node" data-target="database">
+                  <div class="node-icon"><i class="devicon-postgresql-plain colored"></i></div>
+                  <span class="node-label">PostgreSQL</span>
+                </div>
+              </div>
+
+              <!-- Async Layer -->
+              <div class="arch-col">
+                <div class="arch-node" data-target="async">
+                  <div class="node-icon"><i class="devicon-redis-plain colored"></i></div>
+                  <span class="node-label">Redis / Async</span>
+                </div>
+                <div class="arch-connector vertical"></div>
+                <div class="arch-node db-node" data-target="infra">
+                  <div class="node-icon"><i class="devicon-kubernetes-plain colored"></i></div>
+                  <span class="node-label">K8s / AWS</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Info Panel -->
+          <div class="arch-info-panel glass">
+            <div class="info-content" id="info-content">
+              <div class="info-placeholder">
+                <span style="font-size: 2rem;">👆</span>
+                <p>Hover over or click a component in the architecture diagram to see what I do at each layer.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
     <!-- Experience Section -->
     <section id="experience" class="section">
       <div class="container">
