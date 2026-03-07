@@ -194,4 +194,29 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  // --- Hero Section Typing Animation ---
+  const rawText = "I am a Backend Developer with 4 years of experience building high-performance microservices using Python (FastAPI, Django) and Node.js. Strong expertise in REST API design, automated testing with Pytest, Kubernetes-based deployments, and distributed systems. Extensively leverage Generative AI to accelerate development and problem-solving.";
+  
+  const typeTarget = document.getElementById('hero-typing-text');
+  const promptLine = document.getElementById('hero-prompt-line');
+
+  if (typeTarget && promptLine) {
+    let index = 0;
+    const typeSpeed = 15; // ms per char
+
+    function typeWriter() {
+      if (index < rawText.length) {
+        typeTarget.innerHTML += rawText.charAt(index);
+        index++;
+        setTimeout(typeWriter, typeSpeed);
+      } else {
+        // Show prompt line when typing concludes
+        promptLine.style.display = 'flex';
+      }
+    }
+
+    // Start typing after short delay to let animations settle
+    setTimeout(typeWriter, 500);
+  }
 });
