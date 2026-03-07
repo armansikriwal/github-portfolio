@@ -13,8 +13,8 @@
 
 :root {
   --bg-color: #f3f6fc;
-  --bg-gradient: radial-gradient(circle at 15% 50%, rgba(56, 189, 248, 0.15), transparent 40%),
-               radial-gradient(circle at 85% 30%, rgba(129, 140, 248, 0.15), transparent 40%);
+  --bg-gradient: radial-gradient(circle at top left, rgba(56, 189, 248, 0.08), transparent 40%),
+                 radial-gradient(circle at bottom right, rgba(129, 140, 248, 0.08), transparent 40%);
   --card-bg: rgba(255, 255, 255, 0.65);
   --glass-border: rgba(255, 255, 255, 0.8);
   --text-primary: #0f172a;
@@ -30,9 +30,9 @@
 /* Dark theme overrides */
 body.dark-theme {
   --bg-color: #030712;
-  --bg-gradient: radial-gradient(circle at 15% 50%, rgba(56, 189, 248, 0.12), transparent 40%),
-                 radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.12), transparent 40%),
-                 radial-gradient(circle at 50% 80%, rgba(16, 185, 129, 0.08), transparent 40%);
+  --bg-gradient: radial-gradient(circle at top left, rgba(56, 189, 248, 0.05), transparent 40%),
+                 radial-gradient(circle at bottom right, rgba(139, 92, 246, 0.05), transparent 40%),
+                 radial-gradient(circle at center, rgba(16, 185, 129, 0.03), transparent 40%);
   --card-bg: rgba(255, 255, 255, 0.03);
   --glass-border: rgba(255, 255, 255, 0.08);
   --text-primary: #f8fafc;
@@ -161,7 +161,7 @@ body.dark-theme .card-hover:hover {
   font-weight: 500;
   color: var(--text-secondary);
   position: relative;
-  padding: 4px 0;
+  padding: 8px 0;
   transition: color 0.3s ease;
 }
 .nav-link::after {
@@ -241,6 +241,15 @@ body.dark-theme .card-hover:hover {
 .btn-primary:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 25px var(--accent-glow);
+}
+.btn-primary.outline {
+  background: transparent;
+  border: 1px solid var(--accent);
+  color: var(--text-primary);
+  box-shadow: none;
+}
+.btn-primary.outline:hover {
+  background: rgba(59, 130, 246, 0.05);
 }
 
 .theme-toggle {
@@ -342,8 +351,14 @@ body.dark-theme .card-hover:hover {
   color: var(--text-secondary);
   margin-bottom: 24px;
 }
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
 @media (max-width: 768px) {
   .about-content h2 { text-align: center; }
+  .hero-actions { justify-content: center; }
 }
 
 /* Stats */
@@ -358,9 +373,15 @@ body.dark-theme .card-hover:hover {
   padding: 30px 20px;
 }
 .stat-icon {
-  font-size: 2.5rem;
   margin-bottom: 16px;
-  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.1));
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+}
+.stat-icon svg {
+  width: 48px;
+  height: 48px;
 }
 .stat-number {
   font-size: 2.5rem;
@@ -368,6 +389,7 @@ body.dark-theme .card-hover:hover {
   font-weight: 700;
   background: var(--accent-gradient);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   display: block;
 }
@@ -633,6 +655,11 @@ footer {
     box-shadow: var(--shadow);
     gap: 16px;
     animation: fadeIn 0.3s ease;
+    align-items: center;
+  }
+  .nav-menu .btn-primary {
+    width: 100%;
+    justify-content: center;
   }
 }
 @keyframes fadeIn {
@@ -643,7 +670,11 @@ footer {
 @media (max-width: 600px) {
   .section { padding: 50px 0; }
   .about-header { padding: 24px; }
+  .stats-grid { grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 12px; }
+  .stat-card { padding: 20px 12px; }
+  .stat-number { font-size: 2rem; }
   .exp-card { padding: 24px; }
   .project-card { padding: 24px; }
+  .skills-container { gap: 16px; }
   .contact-section { padding: 40px 24px; }
 }
