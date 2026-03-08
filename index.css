@@ -138,7 +138,7 @@ h1, h2, h3, h4, .logo {
 
 .terminal-body {
   padding: 24px;
-  color: var(--text-primary);
+  color: #f8fafc; /* Bright slate-50 for high contrast terminal text */
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.95rem;
   line-height: 1.7;
