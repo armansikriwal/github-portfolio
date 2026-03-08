@@ -128,7 +128,7 @@ h1, h2, h3, h4, .logo {
 .term-dot.green { background: #27c93f; }
 
 .term-title {
-  color: var(--text-secondary);
+  color: #94a3b8; /* Slate-400, remains visible against dark header background */
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.8rem;
   margin-left: auto;
