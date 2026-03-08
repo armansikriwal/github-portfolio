@@ -144,6 +144,17 @@ h1, h2, h3, h4, .logo {
   line-height: 1.7;
 }
 
+@media (max-width: 768px) {
+  .terminal-body {
+    padding: 16px !important;
+    font-size: 0.85rem !important;
+    text-align: left !important;
+  }
+  .term-output {
+    text-align: left !important;
+  }
+}
+
 .term-line {
   margin-bottom: 12px;
   display: flex;
@@ -416,7 +427,6 @@ body.dark-theme .card-hover:hover {
 @media (max-width: 768px) {
   .about-header {
     grid-template-columns: 1fr;
-    text-align: center;
   }
 }
 
@@ -461,7 +471,6 @@ body.dark-theme .card-hover:hover {
   flex-wrap: wrap;
 }
 @media (max-width: 768px) {
-  .about-content h2 { text-align: center; }
   .hero-actions { justify-content: center; }
 }
 
@@ -638,6 +647,24 @@ body.dark-theme .card-hover:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+@media (max-width: 900px) {
+  .arch-split {
+    display: none !important;
+  }
+  .arch-row {
+    display: block !important;
+    width: 100% !important;
+  }
+  .arch-col {
+    display: block !important;
+    width: 100% !important;
+    margin-bottom: 30px !important;
+  }
+  .arch-node {
+    margin: 0 auto 30px auto !important;
+  }
 }
 
 /* Info Panel */
